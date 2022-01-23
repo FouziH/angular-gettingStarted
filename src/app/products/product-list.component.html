@@ -34,7 +34,8 @@
             <tbody>
                 <tr *ngFor='let product of products'>
                     <td>
-                        <img [src]='product.imageUrl' alt="">
+                        <img [src]='product.imageUrl' 
+                        [title]='product.productName' alt="">
                     </td>
                     <td> {{ product.productName }}</td>
                     <td> {{ product.productCode }}</td>
