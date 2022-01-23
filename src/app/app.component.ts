@@ -10,7 +10,8 @@ import { Component } from "@angular/core";
   //     <pm-products> </pm-products>
   //   </div>
   // `,
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   pageTitle: String = 'Acme Product Management';
