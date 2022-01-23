@@ -10,6 +10,7 @@ export class ProductListComponent {
   imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: String = 'cart';
+  transForm : string = 'bold';
   products: any[] = [
     {
       productId: 1,
@@ -66,6 +67,7 @@ export class ProductListComponent {
 
   toggleImage() : void {
       this.showImage = !this.showImage;
+      console.log(this.showImage)
 
   }
 }
