@@ -10,6 +10,7 @@ export class ProductListComponent {
   imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: String = 'cart';
+  count: number =0;
   products: any[] = [
     {
       productId: 1,
