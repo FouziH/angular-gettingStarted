@@ -3,8 +3,8 @@ export interface IProduct {
   productName: String;
   productCode: String;
   releaseDate: String;
-  Price: number;
-  Description: String;
+  price: number;
+  description: String;
   starRating: number;
   imageUrl: String;
 }
