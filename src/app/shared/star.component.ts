@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 export class StarComponent implements OnChanges {
     @Input() rating: number = 0;
     cropWidth: number = 75;
-    ratingClicked: EventEmitter<string> = new EventEmitter<string>();
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
 
 
 
@@ -18,8 +18,10 @@ export class StarComponent implements OnChanges {
     }
 
     onClick() : void {
-        const log = `the rating ${this.rating} was clicked`;
-        console.log(log);
+        
+        const logOut = `the rating ${this.rating} was clicked`
+        this.ratingClicked.emit(logOut)
+        console.log(logOut);
       
     }
 }
