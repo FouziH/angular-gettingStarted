@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
 @Component({
@@ -7,7 +7,7 @@ import { IProduct } from "./product";
   styleUrls: ['./product-list.component.css']
 
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   pageTitle: String = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
@@ -72,5 +72,10 @@ export class ProductListComponent {
       this.showImage = !this.showImage;
       console.log(this.showImage)
 
+  }
+
+//on Init is similar to useEffect hook in react 
+  ngOnInit(): void {
+      console.log("In OnInit")
   }
 }
