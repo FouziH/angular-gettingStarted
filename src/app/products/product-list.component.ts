@@ -85,6 +85,7 @@ export class ProductListComponent implements OnInit {
 
   performFilter(filterBy: string) : IProduct[] {
     filterBy = filterBy.toLowerCase();
+    return this.products.filter((product: IProduct) => product.productName.toLowerCase())
   }
 
   toggleImage(): void {
