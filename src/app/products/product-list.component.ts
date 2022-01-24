@@ -83,6 +83,10 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
+  performFilter(filterBy: string) : IProduct[] {
+
+  }
+
   toggleImage(): void {
     this.showImage = !this.showImage;
     console.log(this.showImage);
