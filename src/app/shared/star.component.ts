@@ -19,7 +19,7 @@ export class StarComponent implements OnChanges {
 
     onClick() : void {
         
-        const logOut = `the rating ${this.rating} was clicked`
+        const logOut = `The rating ${this.rating} was clicked`
         this.ratingClicked.emit(logOut)
         console.log(logOut);
       
