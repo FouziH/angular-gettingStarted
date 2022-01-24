@@ -27,6 +27,8 @@ export class ProductListComponent implements OnInit {
     this._listFilter = value;
     console.log('In setters method, value is set to', value);
   }
+
+  filteredProducts:IProduct[] = [];
   products: IProduct[] = [
     {
       productId: 1,
