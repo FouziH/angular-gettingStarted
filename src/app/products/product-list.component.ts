@@ -22,6 +22,11 @@ export class ProductListComponent implements OnInit {
       //here wer are returning a the private variable name using this
     return this._listFilter;
   }
+
+  set lister(value: string) {
+      this._listFilter = value;
+      console.log("In setters method, value is set to", value);
+  }
   products: IProduct[] = [
     {
       productId: 1,
@@ -83,5 +88,6 @@ export class ProductListComponent implements OnInit {
   //on Init is similar to useEffect hook in react
   ngOnInit(): void {
     console.log('In OnInit');
+    this.listFiler = 'cart';
   }
 }
