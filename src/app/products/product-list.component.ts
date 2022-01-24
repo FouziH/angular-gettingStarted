@@ -85,7 +85,7 @@ export class ProductListComponent implements OnInit {
 
   performFilter(filterBy: string) : IProduct[] {
     filterBy = filterBy.toLowerCase();
-    return this.products.filter((product: IProduct) => product.productName.toLowerCase())
+    return this.products.filter((product: IProduct) => product.productName.toLowerCase().includes(filterBy))
   }
 
   toggleImage(): void {
@@ -96,6 +96,6 @@ export class ProductListComponent implements OnInit {
   //on Init is similar to useEffect hook in react
   ngOnInit(): void {
     console.log('In OnInit');
-    this.listFilter = 'cart';
+    this.listFilter = '';
   }
 }
