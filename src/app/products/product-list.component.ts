@@ -1,19 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { IProduct } from "./product";
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
-
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
-  listFilter: string = 'cart';
-  count: number =0;
+  //   listFilter: string = 'cart';
+  //   count: number =0;
+
+  //declaring a private variable called filter and set it to empty string
+  private _listFilter: string = '';
+
+  //declaring a getter method called listFilter. This getter method will return a string data type 
+  get listFiler(): string {
+      //here wer are returning a the private variable name using this
+    return this._listFilter;
+  }
   products: IProduct[] = [
     {
       productId: 1,
@@ -67,15 +75,13 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
-
-  toggleImage() : void {
-      this.showImage = !this.showImage;
-      console.log(this.showImage)
-
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+    console.log(this.showImage);
   }
 
-//on Init is similar to useEffect hook in react 
+  //on Init is similar to useEffect hook in react
   ngOnInit(): void {
-      console.log("In OnInit")
+    console.log('In OnInit');
   }
 }
