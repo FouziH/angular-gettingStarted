@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {catchError, tap} from 'rxjs/operators'
@@ -13,9 +13,21 @@ export class ProductService {
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.productUrl).pipe(
-      tap(data => console.log('All', JSON.stringify(data)))
+      tap(data => console.log('All', JSON.stringify(data))), catchError(this.handleError)
     );
   }
 
-  private
+  private handleError(error: HttpErrorResponse) {
+    //in a real world app, we may send the server to some logging infrastructure 
+    //instead of just logging it to the console
+
+    let errorMessage = '' ;
+    if(error.error instanceof ErrorEvent){
+      // a client-side or network error occurred. Handle it accordingly.
+      errorMessage = `An error occurred: ${error.error.message}`
+    } else {
+      //the back return unsuccessful response code. 
+      
+    }
+  }
 }
