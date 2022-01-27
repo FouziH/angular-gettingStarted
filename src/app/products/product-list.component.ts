@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 
@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
+  errorMessage ='';
   //   listFilter: string = 'cart';
   //   count: number =0;
 
@@ -50,11 +51,18 @@ export class ProductListComponent implements OnInit {
   //on Init is similar to useEffect hook in react
   ngOnInit(): void {
     console.log('In OnInit');
-    this.products = this.productService.getProducts();
+    this.sub = this.productService.getProducts().subscribe({
+      next: this.products => this.products = this.products, 
+      error: err => this.errorMessage = err
+    });
     this.filteredProducts = this.products;
     // this.listFilter = '';
   }
   onRatingClicked(message: string):void {
     this.pageTitle = 'Product List: ' + message;
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

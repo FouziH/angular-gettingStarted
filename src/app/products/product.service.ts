@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import {catchError, tap} from 'rxjs/operators'
 import { IProduct } from './product';
 
@@ -27,7 +27,15 @@ export class ProductService {
       errorMessage = `An error occurred: ${error.error.message}`
     } else {
       //the back return unsuccessful response code. 
-      
+      //The response body may contain clues as to what went wrong
+
+      errorMessage = `Server return code: ${error.status}, error message is: ${error.message}`
     }
+
+
+    console.log(errorMessage);
+
+   return throwError(errorMessage);
   }
+
 }
