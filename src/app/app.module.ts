@@ -25,7 +25,7 @@ import {RouterModule} from '@angular/router'
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot([])
   
   ],
   bootstrap: [AppComponent]
