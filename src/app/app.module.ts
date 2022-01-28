@@ -25,7 +25,10 @@ import {RouterModule} from '@angular/router'
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([
+      {path: 'product', component: ProductListComponent},
+      {path: }
+    ])
   
   ],
   bootstrap: [AppComponent]
