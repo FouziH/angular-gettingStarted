@@ -17,25 +17,14 @@ import { ProductModule } from './products/product.module';
   declarations:[
     AppComponent,
     WelcomeComponent,
-    ProductListComponent, 
-    ConvertToSpacePipe,
-    StarComponent,
-    ProductDetailComponent,
-    
-   
+     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'products', component: ProductListComponent},
-      {
-        path: 'products/:id',
-         canActivate: [ProductDetailGuard], 
-         component: ProductDetailComponent 
-        
-        },
+     
       {path: 'welcome', component: WelcomeComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
       {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
