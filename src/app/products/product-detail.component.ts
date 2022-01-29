@@ -11,7 +11,8 @@ pageTitle: string = 'Product Details';
   constructor( private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(id)
   }
 
 }
