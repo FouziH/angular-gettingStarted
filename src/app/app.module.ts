@@ -19,6 +19,7 @@ import {RouterModule} from '@angular/router'
     ConvertToSpacePipe,
     StarComponent,
     ProductDetailComponent,
+    
    
   ],
   imports: [
