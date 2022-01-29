@@ -26,5 +26,10 @@ export class ProductDetailComponent implements OnInit {
       'imageUrl': 'assets/images/leaf_rake.png'
     };
   }
+  
+
+   onBack () : void {
+    this.router.navigate(['/products'])
+  }
 
 }
