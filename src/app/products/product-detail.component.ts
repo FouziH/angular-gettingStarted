@@ -12,7 +12,7 @@ pageTitle: string = 'Product Details';
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id)
+    this.pageTitle += `: ${id}`
   }
 
 }
