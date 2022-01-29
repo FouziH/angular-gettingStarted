@@ -1,9 +1,9 @@
 <div class="card">
   <div class="card-header">
-    {{ pageTitle + ":" + product?.productName }}
+  {{ pageTitle + ":" + product?.productName }}
   </div>
   <div class="body">
-     <p> {{productProducts}}</p>
+    Product Description:  {{product?.description}}
   </div>
   <div class="card-footer">
     <button class="btn btn-outline-secondary" (click)="onBack()">

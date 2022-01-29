@@ -9,7 +9,6 @@ import { IProduct } from './product';
 })
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Details';
-  productProducts: String[] = ['Hamza', 'Fowzi', 'Mohamed', 'Ali', "Abdi", "Dhalin", "Sharmarke","Warfaa", "Xandun", "Guled"]
   product: IProduct | undefined;
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -29,11 +28,6 @@ export class ProductDetailComponent implements OnInit {
       'imageUrl': 'assets/images/leaf_rake.png'
     };
 
-    this.productProducts.forEach(items => {
-
-      console.log(items)
-      return items.split(' ');
-    })
   }
   
 
